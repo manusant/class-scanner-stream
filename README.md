@@ -81,7 +81,7 @@ Add this entry to your *build.gradle* file
 ```
 And add the dependency
 ```groovy
-  compile 'com.beerboy.scanner:class-scanner-stream:1.0.0.1'
+  compile 'com.beerboy.scanner:class-scanner-stream:1.0.0.2'
 ```
 ### Maven
 Add this to *dependencyManagement* section of your *pom.xml* 
@@ -98,6 +98,6 @@ And add the dependency
   <dependency>
     <groupId>com.beerboy.scanner</groupId>
     <artifactId>class-scanner-stream</artifactId>
-    <version>1.0.0.1</version>
+    <version>1.0.0.2</version>
   </dependency>
 ```
