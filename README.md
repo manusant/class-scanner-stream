@@ -61,7 +61,7 @@ It´s a lightweight class scanner that allows us to apply filters and collect re
 
 ### Scan all classes that meet all applied filters under specified package
 ```java
-  List<Class> implementerClasses = ClassScanner.scan(classLoader, "com.beerboy.scanner")
+  List<Class> filteredClasses = ClassScanner.scan(classLoader, "com.beerboy.scanner")
                 .stream()
                 .implementers(Interface.class)
                 .subClasses(ParentType.class)
