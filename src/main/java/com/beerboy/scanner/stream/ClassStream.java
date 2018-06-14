@@ -1,16 +1,11 @@
 package com.beerboy.scanner.stream;
 
-import com.beerboy.scanner.PackageScanner;
-import com.beerboy.scanner.loader.ClassResourceLoader;
 import com.beerboy.scanner.predicate.AnnotatedClassPredicate;
 import com.beerboy.scanner.predicate.ImplementerClassPredicate;
 import com.beerboy.scanner.predicate.SubClassPredicate;
 
-import java.io.IOException;
 import java.lang.annotation.Annotation;
 import java.util.Collection;
-import java.util.Optional;
-import java.util.Set;
 import java.util.function.Predicate;
 import java.util.function.Supplier;
 import java.util.stream.Collector;
@@ -23,17 +18,8 @@ public class ClassStream implements IClassStream<Class> {
 
     private Stream<Class<?>> stream;
 
-    private ClassStream(Collection<Class<?>> classes) {
+    public ClassStream(Collection<Class<?>> classes) {
         this.stream = classes.stream();
-    }
-
-    public static ClassStream scan(ClassLoader classLoader, final String packageName) throws IOException {
-        Optional.ofNullable(packageName).orElseThrow(() -> new IllegalArgumentException("Package name is required"));
-
-        ClassResourceLoader resourceLoader = new ClassResourceLoader(classLoader, false);
-        PackageScanner<Class<?>> scanner = new PackageScanner<>(resourceLoader);
-        Set<Class<?>> scanResult = scanner.scan(packageName);
-        return new ClassStream(scanResult);
     }
 
     @Override
