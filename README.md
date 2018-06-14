@@ -13,6 +13,18 @@ It´s a lightweight class scanner that allows us to apply filters and collect re
                 .collect(Collectors.groupingBy(Class::getPackage));
 ```
 
+### Specify scan configurations (By default all flags are true)
+```java
+ ScannerConfig config = ScannerConfig.newBuilder()
+                .withRecursive(true)
+                .withScanDirs(true)
+                .withScanJars(true)
+                .build();
+
+ List<Class> result = ClassScanner.scan(classLoader, "com.beerboy.scanner", config)
+                .collect(Collectors.toList());
+```             
+                
 ### Scan all classes annotated with specified @Annotation under specified package
 ```java
   List<Class> annotatedClasses = ClassScanner.scan(classLoader, "com.beerboy.scanner")
