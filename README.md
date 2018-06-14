@@ -1,4 +1,4 @@
-# class-scanner-stream
+# class-scanner-stream  <img src="https://travis-ci.org/manusant/class-scanner-stream.svg?branch=master" alt="build:">
 It´s a lightweight class scanner that allows us to apply filters and collect results in a stream pipeline.
 
 ### Scan all classes under specified package
