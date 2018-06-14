@@ -51,3 +51,36 @@ It´s a lightweight class scanner that allows us to apply filters and collect re
                 .annotatedWith(Logger.class)
                 .collect(Collectors.toList());
 ```
+
+## Add to your project
+### Gradle
+Add this entry to your *build.gradle* file
+```groovy
+ repositories {
+    maven {
+        url "https://packagecloud.io/manusant/beerRepo/maven2"
+    }
+}
+```
+And add the dependency
+```groovy
+  compile 'com.beerboy.scanner:class-scanner-stream:1.0.0.0'
+```
+### Maven
+Add this to *dependencyManagement* section of your *pom.xml* 
+```xml
+<repositories>
+  <repository>
+    <id>manusant-beerRepo</id>
+    <url>https://packagecloud.io/manusant/beerRepo/maven2</url>
+  </repository>
+</repositories>
+```
+And add the dependency
+```xml
+  <dependency>
+    <groupId>com.beerboy.scanner</groupId>
+    <artifactId>class-scanner-stream</artifactId>
+    <version>1.0.0.0</version>
+  </dependency>
+```
