@@ -43,13 +43,13 @@ public class ClassStream implements IClassStream<Class> {
     }
 
     @Override
-    public IClassStream<Class> subClasses(Class<? extends Class> baseType) {
+    public IClassStream<Class> subClasses(Class baseType) {
         stream = stream.filter(new SubClassPredicate(baseType));
         return this;
     }
 
     @Override
-    public IClassStream<Class> implementers(Class<? extends Class> interfaceType) {
+    public IClassStream<Class> implementers(Class interfaceType) {
         stream = stream.filter(new ImplementerClassPredicate(interfaceType));
         return this;
     }
