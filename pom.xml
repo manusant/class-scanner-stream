@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>com.beerboy.scanner</groupId>
+    <artifactId>class-scanner-stream</artifactId>
+    <version>1.0.0.0</version>
+    <packaging>jar</packaging>
+
+    <prerequisites>
+        <maven>3.0.4</maven>
+    </prerequisites>
+
+    <developers>
+        <developer>
+            <id>manusant</id>
+            <name>Manuel Santos</name>
+            <email>ney.br.santos@gmail.com</email>
+        </developer>
+    </developers>
+
+    <licenses>
+        <license>
+            <name>Apache 2.0</name>
+            <url>https://www.apache.org/licenses/LICENSE-2.0</url>
+            <distribution>repo</distribution>
+        </license>
+    </licenses>
+
+    <scm>
+        <url>https://github.com/manusant/class-scanner-stream.git</url>
+        <connection>scm:git:ssh://git@github.com:manusant/class-scanner-stream.git</connection>
+        <developerConnection>scm:git:ssh://git@github.com:manusant/class-scanner-stream.git</developerConnection>
+        <tag>class-scanner-stream-1.0.0.0</tag>
+    </scm>
+
+    <issueManagement>
+        <system>GitHub</system>
+        <url>https://github.com/manusant/class-scanner-stream/issues</url>
+    </issueManagement>
+
+    <distributionManagement>
+        <snapshotRepository>
+            <id>packagecloud-travis</id>
+            <url>packagecloud+https://packagecloud.io/manusant/beerRepo</url>
+        </snapshotRepository>
+        <repository>
+            <id>packagecloud-travis</id>
+            <url>packagecloud+https://packagecloud.io/manusant/beerRepo</url>
+        </repository>
+    </distributionManagement>
+
+    <properties>
+        <!-- Settings -->
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <java.version>1.8</java.version>
+
+        <maven.javadoc.failOnError>false</maven.javadoc.failOnError>
+        <version.compiler.plugin>3.5.1</version.compiler.plugin>
+
+        <!-- Sonar -->
+        <sonar.core.codeCoveragePlugin>jacoco</sonar.core.codeCoveragePlugin>
+        <sonar.language>java</sonar.language>
+        <sonar.dynamicAnalysis>reuseReports</sonar.dynamicAnalysis>
+        <sonar.jacoco.reportPath>${user.dir}/target/jacoco.exec</sonar.jacoco.reportPath>
+        <sonar.jacoco.itReportPath>${user.dir}/target/jacoco-it.exec</sonar.jacoco.itReportPath>
+        <sonar.jacoco.reportMissing.force.zero>true</sonar.jacoco.reportMissing.force.zero>
+
+        <!-- jacoco api version -->
+        <jacoco.api.version>0.7.6.201602180812</jacoco.api.version>
+
+    </properties>
+
+    <build>
+        <extensions>
+            <extension>
+                <groupId>io.packagecloud.maven.wagon</groupId>
+                <artifactId>maven-packagecloud-wagon</artifactId>
+                <version>0.0.4</version>
+            </extension>
+        </extensions>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>${version.compiler.plugin}</version>
+                <configuration>
+                    <source>${java.version}</source>
+                    <target>${java.version}</target>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-jar-plugin</artifactId>
+                <version>3.0.2</version>
+            </plugin>
+        </plugins>
+    </build>
+
+    <dependencies>
+        <dependency>
+            <groupId>commons-io</groupId>
+            <artifactId>commons-io</artifactId>
+            <version>2.3</version>
+        </dependency>
+
+        <dependency>
+            <groupId>commons-lang</groupId>
+            <artifactId>commons-lang</artifactId>
+            <version>2.6</version>
+        </dependency>
+    </dependencies>
+</project>

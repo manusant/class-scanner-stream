@@ -1,0 +1,20 @@
+# Add any directories, files, or patterns you don't want to be tracked by version control
+node_modules
+.tmp
+.sass-cache
+.gradle/
+.idea/
+build/
+bin/.gitignore
+.classpath
+.project
+.settings/org.eclipse.buildship.core.prefs
+.settings/org.eclipse.jdt.core.prefs
+.settings/org.eclipse.jdt.ui.prefs
+/storage/
+/classes/
+/sed.log
+/dev/*
+/logs/
+*.iml
+settings.xml
