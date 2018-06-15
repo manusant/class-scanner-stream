@@ -38,4 +38,8 @@ public class ClassScanner {
     public static ScanResult scan(ClassLoader classLoader, final String packageName) throws IOException {
         return scan(classLoader, packageName, ScannerConfig.withDefaults());
     }
+
+    public static ScanResult scan(final String packageName) throws IOException {
+        return scan(ClassLoader.getSystemClassLoader(), packageName, ScannerConfig.withDefaults());
+    }
 }
